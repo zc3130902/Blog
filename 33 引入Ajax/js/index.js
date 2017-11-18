@@ -927,4 +927,23 @@ $(function(){
         $('#photo_big .big img').attr('index',$(children).index());
         $('#photo_big .big .index').html(parseInt($(children).index()) +1 + '/' + $('#photo dl img').length());
    }
+
+
+   //ajax引用
+   $(document).click(function(){
+        ajax({
+            method:'post', //psot方式提交 不带后缀
+            url:'demo.php',
+            data:{         //传递name和age数据到demo.php
+               name:'Lee',
+               age:100
+            },
+            sucess:function(text){//回调数据文本
+               //alert(text);
+            },
+            async:true
+         });
+   });
+
+
 })
